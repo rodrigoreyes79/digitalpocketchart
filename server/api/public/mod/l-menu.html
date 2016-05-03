@@ -1,0 +1,8 @@
+<div>
+    <div class="notice notice-success" v-for="i in items" :class="{'active': currentView == i.screen}" v-on:click="doScreen(i)">
+        <strong>{{ i.label }}</strong>
+    </div>
+    <div class="notice notice-success" v-on:click="doLogout">
+        <strong>Salir</strong>
+    </div>
+</div>

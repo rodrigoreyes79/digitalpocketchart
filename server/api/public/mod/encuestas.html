@@ -1,0 +1,31 @@
+<h2>
+    Encuestas
+    <button class="pull-right btn btn-default">Nueva</button>
+</h2>
+
+<div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default">Inactivas</button>
+  <button type="button" class="btn btn-default">Activas</button>
+  <button type="button" class="btn btn-default">Finalizadas</button>
+  <button type="button" class="btn btn-default">Archivadas</button>
+</div>
+
+<div class="results">
+    <table>
+        <tbody>
+            <tr v-for="i in items">
+                <td>
+                    <h4>{{ i.name }}</h4>
+                    <p>
+                        <strong>Activa</strong><br/>
+                        Creada el 9 de Abril del 2016.<br/>
+                        10 votaciones recibidas
+                    </p>
+                </td>
+                <td class="actions">
+                    <p><a href="#">Votaciones</a> | <a href="#">Finalizar</a></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel=stylesheet href="css/bundle.css">
+    </head>
+    <body id="app-container">
+        <nav class="navbar navbar-default navbar-dpc" v-if="loggedIn">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">
+                Digital Pocket Chart
+              </a>
+            </div>
+          </div>
+        </nav>
+        <div class="container-fluid">
+            <login v-if="!loggedIn" v-on:login="doLogin"></login>
+            <div v-if="loggedIn">
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <l-menu :current-view.sync="currentView" :logged-in.sync="loggedIn"></l-menu>
+                    </div>
+                    <div class="col-md-9 mod-panel">
+                        <component :is="currentView"></component>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/bundle.js" charset="utf-8"></script>
+    </body>
+</html>

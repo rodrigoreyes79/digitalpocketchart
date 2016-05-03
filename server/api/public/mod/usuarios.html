@@ -1,0 +1,24 @@
+<h2>
+    Usuarios
+    <button class="pull-right btn btn-default">Nuevo</button>
+</h2>
+
+<div class="results">
+    <table>
+        <tbody>
+            <tr v-for="i in items">
+                <td>
+                    <h4>{{ i.name }}</h4>
+                    <p>
+                        <strong>{{ i.tipo }}</strong><br/>
+                        {{ i.email }}<br/>
+                        {{ i.status }}
+                    </p>
+                </td>
+                <td class="actions">
+                    <p><a href="#">Editar</a> | <a href="#">Desactivar</a></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

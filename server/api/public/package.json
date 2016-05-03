@@ -1,0 +1,36 @@
+{
+  "name": "dpc",
+  "version": "1.0.0",
+  "description": "Digital Pocket Chart",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigoreyes79/digitalpocketchart.git"
+  },
+  "author": "Rodrigo Reyes",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/rodrigoreyes79/digitalpocketchart/issues"
+  },
+  "homepage": "https://github.com/rodrigoreyes79/digitalpocketchart#readme",
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "html-loader": "^0.4.3",
+    "node-sass": "^3.7.0",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.0"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.3",
+    "vue": "^1.0.21",
+    "font-awesome": "^4.4.0"
+  }
+}
