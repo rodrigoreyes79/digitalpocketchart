@@ -1,5 +1,7 @@
 <?php
 
+Route::get(	'/api/login', 									'LoginController@index');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

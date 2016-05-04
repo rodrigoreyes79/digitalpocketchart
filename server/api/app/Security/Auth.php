@@ -25,20 +25,20 @@ class Auth {
     private static $userInfo = null;
 	private static $permissions;
 
-    public function init($user){
-        self::userInfo = $user;
-		if(empty(self::userInfo)){
-			self::userInfo = self::getUserInfo();
+    public static function init($user){
+        self::$userInfo = $user;
+		if(empty(self::$userInfo)){
+			self::$userInfo = self::getUserInfo();
         }
 
-        if(self::userInfo != null){
-			self::permissions = self::userInfo["role"]['permissions'];
+        if(self::$userInfo != null){
+			self::$permissions = self::$userInfo["role"]['permissions'];
 		} else {
 			Log::debug('User was not found. Denied all permissions');
-			self::permissions = [];
+			self::$permissions = [];
 		}
 
-		Log::debug('Permissions: ' . print_r(self::permissions, true));
+		Log::debug('Permissions: ' . print_r(self::$permissions, true));
     }
 
     public static function getUserInfo(){
@@ -101,7 +101,10 @@ class Auth {
         if(!empty($authInfo)){
             Log::debug('RoleId: ' . $authInfo->role_id);
             $role = Role::where('id', $authInfo->role_id)->first();
-            $role->permissions = json_decode($role->permissions);
+
+            if(!empty($role)){
+                $role->permissions = json_decode($role->permissions);
+            }
 
             // Making space for the rest of the information
             $authInfo = [
@@ -150,7 +153,7 @@ class Auth {
 
     public static function authorize($permission){
 		$ret = false;
-        for(self::permissions as $p){
+        foreach(self::$permissions as $p){
             if("+$permission" == $p){
                 $ret = true;
                 break;
