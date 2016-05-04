@@ -16,7 +16,6 @@ class CreateRolesTable extends Migration
             $table->increments('id');
             $table->string('name', 100);
             $table->string('label',100);
-            $table->boolean('allows_by_default');
             $table->text('permissions');
             $table->softDeletes();
             $table->timestamps();
