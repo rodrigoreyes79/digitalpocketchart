@@ -30,4 +30,28 @@ class LoginController extends Controller
         $res->withCookie(cookie('auth', $token, 0));
         return $res;
     }
+
+    public function ping(Request $req){
+        $authInfo = Auth::getUserInfo();
+
+        if(empty($authInfo)){
+            $res = response()->json([
+                'code' => 401,
+                'message' => 'Unauthorized'
+            ], 401);
+            $res->withCookie(cookie('auth', null, 0));
+            return $res;
+        } else {
+            return response()->json([
+                "ts" => time(),
+                "authInfo" => $authInfo
+            ]);
+        }
+    }
+
+    public function logout(){
+        $res = response()->json('ok');
+        $res->withCookie(cookie('auth', '', 0));
+        return $res;
+    }
 }

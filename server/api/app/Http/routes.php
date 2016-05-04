@@ -1,6 +1,8 @@
 <?php
 
-Route::get(	'/api/login', 									'LoginController@index');
+Route::get(         '/api/login', 									'LoginController@index');
+Route::get(			'/api/ping', 									'LoginController@ping');
+Route::get(			'/api/logout', 									'LoginController@logout');
 
 /*
 |--------------------------------------------------------------------------

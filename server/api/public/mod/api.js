@@ -97,6 +97,36 @@ var Api = function() {
         });
         return d.promise();
 	}
+
+    // -----------
+	// /api/login
+	// -----------
+	var login = function(user, password){
+		var d = $.Deferred();
+        $.ajax({
+            type: "GET",
+            url: baseUrl + "login",
+            dataType: 'json',
+            async: true,
+            headers: {
+                "Authorization": "Basic " + btoa(user + ':' + password)
+            },
+            cache: false
+        }).then(function(data){
+            d.resolve(data);
+        }, function(){
+            d.reject();
+        });
+        return d.promise();
+	}
+
+    var ping = function() {
+        return get('ping');
+    }
+
+    var logout = function() {
+        return get('logout');
+    }
 }
 
 module.exports = new Api();
