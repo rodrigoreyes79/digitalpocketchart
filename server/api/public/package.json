@@ -29,8 +29,9 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
+    "font-awesome": "^4.4.0",
     "jquery": "^2.2.3",
-    "vue": "^1.0.21",
-    "font-awesome": "^4.4.0"
+    "stacktrace-js": "^1.1.2",
+    "vue": "^1.0.21"
   }
 }

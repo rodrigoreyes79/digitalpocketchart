@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 60);
             $table->integer('role_id')->unsigned();
             $table->integer('org_id')->unsigned();
+            $table->boolean('expired_password')->default(false);
             $table->boolean('config_on_login')->default(false);
             $table->softDeletes();
             $table->timestamps();

@@ -16,7 +16,6 @@
         <div class="container-fluid">
             <login v-if="!loggedIn" v-on:login="doLogin"></login>
             <div v-if="loggedIn">
-
                 <div class="row">
                     <div class="col-md-3">
                         <l-menu :current-view.sync="currentView" :logged-in.sync="loggedIn"></l-menu>

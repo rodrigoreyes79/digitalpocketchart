@@ -101,7 +101,7 @@ var Api = function() {
     // -----------
 	// /api/login
 	// -----------
-	var login = function(user, password){
+	this.login = function(user, password){
 		var d = $.Deferred();
         $.ajax({
             type: "GET",
@@ -120,11 +120,11 @@ var Api = function() {
         return d.promise();
 	}
 
-    var ping = function() {
+    this.ping = function() {
         return get('ping');
     }
 
-    var logout = function() {
+    this.logout = function() {
         return get('logout');
     }
 }

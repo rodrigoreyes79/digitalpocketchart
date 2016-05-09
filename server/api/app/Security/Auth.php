@@ -57,7 +57,7 @@ class Auth {
                 $username = $userInfo["username"];
                 $password = $userInfo["password"];
 
-                Log::debug('Authenticating user: '.$username.$password);
+                Log::debug('Authenticating user: '.$username);
 
                 $authInfo = User::where('email', '=', $username)->first();
                 if(!empty($authInfo)){
